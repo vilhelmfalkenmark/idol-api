@@ -1,33 +1,33 @@
 import axios from "axios";
 
- export function getAllParticipants() {
-  console.log("kallas på!");
+ export function getAllData() {
   return function(dispatch) {
     axios.get("http://api.tv4play.se/site/programs/idol")
     .then((response) => {
       console.log(response.data);
-      dispatch({type: "PARTICIPANTS_FETCHED", payload: response.data})
+      dispatch({type: "DATA_FETCHED", payload: response.data})
     })
     .catch((err) => {
-      dispatch({type: "PARTICIPANTS_REJECTED", payload: err})
+      dispatch({type: "DATA_REJECTED", payload: err})
     })
   }
 }
 
+ export function getSpecificParticipant(participant) {
+  return function(dispatch) {
+     dispatch({type: "PARTICIPANT_SELECTED", payload: participant})
+  }
+}
 
-//  const getAllDatas = () => {
-//   // return function(dispatch) {
-//   //   axios.get("http://api.tv4play.se/site/programs/idol")
-//   //   .then((response) => {
-//   //     console.log(response.data);
-//   //     dispatch({type: "CHANNELS_FETCHED", payload: response.data})
-//   //   })
-//   //   .catch((err) => {
-//   //     dispatch({type: "EVENTS_REJECTED", payload: err})
-//   //   })
-//   // }
-// }
-
-// export default {
-//  getAllData
-// }
+ export function getVideos(tag) {
+  return function(dispatch) {
+   axios.get(`http://api.tv4play.se/play/video_assets.json?tags=${tag}`)
+   .then((response) => {
+     // console.log(response.data);
+     dispatch({type: "VIDEOS_FETCHED", payload: response.data})
+   })
+   .catch((err) => {
+     dispatch({type: "VIDEOS_REJECTED", payload: err})
+   })
+  }
+}

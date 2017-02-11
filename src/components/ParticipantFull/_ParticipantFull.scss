@@ -1,0 +1,32 @@
+.ParticipantFull-video-container {
+  @include flex-row();
+}
+.ParticipantFull-video-col {
+  // position: relative;
+  // min-height: 300px;
+  @include flex-gtr-col(4,$base);
+  // display: flex;
+  // align-items: flex-end;
+
+
+}
+.ParticipantFull-video-bottom {
+  // @include flex-gtr-col(1,$base);
+  margin-top: auto;
+  margin-bottom: 0;
+  vertical-align: bottom;
+  //  align-self: flex-end;
+  // display:flex;
+  // justify-content: center;
+  // align-items: flex-end;
+  // position: relative;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  // margin-top: auto;
+}
+.ParticipantFull-video-thumbnail {
+  height: 200px;
+  background-position: center center;
+  background-size: cover;
+}

@@ -1,12 +1,20 @@
 import React from 'react';
+
 import LandingPage from './components/LandingPage/';
 import Participants from './components/Participants/';
 import ParticipantFull from './components/ParticipantFull/';
-import '../css/stylesheet.css';
+
+import { connect } from "react-redux";
+import { getAllData } from "./actions/ApiActions";
 import { BrowserRouter as Router,  Match, Miss, Link } from 'react-router';
 
+import '../css/stylesheet.css';
 
-export default class App extends React.Component {
+class App extends React.Component {
+ componentDidMount() {
+  this.props.dispatch(getAllData());
+ }
+
   render() {
     return (
         <div className="App">
@@ -31,3 +39,9 @@ export default class App extends React.Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    participants: state.participants
+  }
+}
+export default connect(mapStateToProps)(App);

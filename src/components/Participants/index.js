@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { getAllParticipants } from "../../actions/ApiActions";
+// import { getAllParticipants } from "../../actions/ApiActions";
 import Participant from "./Participant";
 
 class Participants extends React.Component {
@@ -11,12 +11,12 @@ class Participants extends React.Component {
 
     }
   }
-  componentDidMount() {
-   this.props.dispatch(getAllParticipants());
-  }
+  // componentDidMount() {
+  //  this.props.dispatch(getAllParticipants());
+  // }
 
   render() {
-    const {name, participants} = this.props.participants.participants
+    const {name, participants} = this.props.participants
     console.log(participants);
     return (
      <section >
@@ -25,10 +25,11 @@ class Participants extends React.Component {
       {
        participants ?
        participants.map((participant,i) =>
-       <Participant key={i} participant={participant} pathname={this.props.pathname}/>
+       <Participant
+        key={i}
+        participant={participant}
+        pathname={this.props.pathname}/>
       ) : null
-
-
       }
       </div>
      </section>
@@ -39,7 +40,7 @@ class Participants extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    participants: state.participants
+    participants: state.data.participants
   }
 }
 export default connect(mapStateToProps)(Participants);

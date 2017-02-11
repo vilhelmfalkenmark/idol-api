@@ -1,10 +1,9 @@
 import { combineReducers } from "redux";
-import participants from "./ParticipantReducer";
+import data from "./ParticipantReducer";
 // import events from "./EventReducer";
 
 const reducer = combineReducers({
-  participants
-  // events
+  data
 })
 
 export default reducer;

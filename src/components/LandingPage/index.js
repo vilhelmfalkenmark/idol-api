@@ -3,20 +3,16 @@ import { connect } from "react-redux";
 
 class LandingPage extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
 
-    }
-  }
-  componentDidMount() {
-   // this.props.dispatch(getAllParticipants());
-  }
 
   render() {
+
+    const {data} = this.props;
+    console.log(data);
     return (
-     <section >
-      <h2>Välkommen till villes feta sida!</h2>
+     <section>
+      <h1>{data.description}</h1>
+      <img src={data.programImage} />
      </section>
     )
 
@@ -25,7 +21,7 @@ class LandingPage extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    participants: state.participants
+    data: state.data
   }
 }
 export default connect(mapStateToProps)(LandingPage);
