@@ -6,6 +6,7 @@
 
 body {
   background-color: $color-background;
+  font-family: sofiaRegular;
 }
 
 ul {
@@ -19,4 +20,10 @@ li {
 
 h3 {
   margin: 0;
+}
+.Site-container {
+  width: 100%;
+  max-width: 1160px;
+  padding: 0 $base;
+  margin: 0 auto;
 }

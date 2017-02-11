@@ -1,0 +1,10 @@
+.Participants-container {
+  @include flex-row();
+}
+.Participant-teaser {
+  @include flex-gtr-col(4,2*$base);
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

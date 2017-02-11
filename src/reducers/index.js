@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import channels from "./ChannelReducer";
+import participants from "./ParticipantReducer";
 // import events from "./EventReducer";
 
 const reducer = combineReducers({
-  channels
+  participants
   // events
 })
 
