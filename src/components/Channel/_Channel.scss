@@ -1,0 +1,67 @@
+$icon-width: 160px;
+$arrow-width: 40px;
+
+
+.Channel {
+  background-color: $color-channel;
+  margin-bottom: 20px;
+  height: 160px;
+  @include flex-row();
+}
+
+.Channel-col-icon {
+  width: 160px;
+  @include flex-position(center);
+
+  img {
+    display: block;
+    max-width: 80%;
+    max-height: 80px;
+  }
+}
+
+.Channel-col-preview {
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - #{$icon-width});
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+.Channel-col-preview-inner{
+  transition: all .4s ease;
+  margin: 0 auto;
+  width: calc(100% - #{2*$arrow-width})
+}
+
+.Channel-arrow {
+  background-color: $transparent-grey;
+  transition: all .2s ease;
+  position: absolute;
+  top: 0;
+  width: $arrow-width;
+  height: 100%;
+  cursor: pointer;
+  z-index: 999;
+  @include flex-position(center);
+  span {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: url("../images/arrow.svg") center center no-repeat;
+  }
+  &:hover {
+    background-color: black;
+  }
+}
+
+.Channel-arrow--right {
+  right: 0;
+}
+
+.Channel-arrow--left {
+  left: 0;
+  span {
+    transform: rotate(180deg);
+  }
+}

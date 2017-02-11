@@ -1,0 +1,36 @@
+{
+  "name": "Vilhelm Falkenmark Arbetsprov bonnier",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.7.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "run-sequence": "^1.1.4",
+    "sassdoc": "^2.1.15",
+    "express": "^4.14.0"
+  },
+  "dependencies": {
+    "axios": "^0.15.2",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^4.0.0-2",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-promise-middleware": "^3.2.0",
+    "redux-thunk": "^2.1.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "proxy": "node  proxy.js"
+  }
+}
