@@ -3,13 +3,12 @@
 *:after {
   box-sizing: border-box;
 }
-
 body {
   background-color: $color-background;
   color: $text;
   font-family: sofiaRegular;
+  padding-bottom: 2*$base;
 }
-
 ul, menu {
   margin: 0;
   padding: 0;
@@ -22,7 +21,7 @@ a {
   }
 }
 li {
-  list-style: none;
+  list-style: none; 
 }
 h3 {
   margin: 0;
@@ -45,7 +44,5 @@ menu {
     &:first-of-type {
       margin-right: 2*$base;
     }
-
-
   }
 }

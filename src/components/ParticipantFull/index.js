@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { getSpecificParticipant, getVideos } from "../../actions/ApiActions";
-
 class ParticipantFull extends React.Component {
   constructor(props) {
     super(props)
@@ -33,12 +32,7 @@ class ParticipantFull extends React.Component {
   }
 
   render() {
-
    const {participant, videos} = this.props;
-
-    // console.log(participant);
-    console.log(videos,"videos");
-    // console.log(participant.image.url);
     return (
      <section >
       {
@@ -53,7 +47,11 @@ class ParticipantFull extends React.Component {
           return <div key={i} className="ParticipantFull-video-col">
             <h4>{video.title}</h4>
             <div className="ParticipantFull-video-bottom">
-             <div className="ParticipantFull-video-thumbnail" style={{backgroundImage: `url(${video.image})`}}></div>
+             <div
+              className="ParticipantFull-video-thumbnail"
+              style={{backgroundImage: `url(${video.image }),
+              url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSa-l4WyguxAiqGQM8WehxC3Ym88lkmv6rtwoGh6KzDqyEoEiJP')`}}>
+              </div>
              <a href={`http://www.tv4play.se/program/idol?video_id=${video.id}`} target="_blank">Se klipp på TV4.se</a>
             </div>
           </div>

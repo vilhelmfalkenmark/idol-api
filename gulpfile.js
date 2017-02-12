@@ -1,32 +1,28 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
-var runSequence = require('run-sequence');
-var sassdoc = require('sassdoc');
-var cleanCSS = require('gulp-clean-css');
-// var browserSync = require('browser-sync');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const runSequence = require('run-sequence');
+const sassdoc = require('sassdoc');
+const cleanCSS = require('gulp-clean-css');
 
-
-var autoprefixerOptions = {
+const autoprefixerOptions = {
     browsers: ['last 2 versions','ie >= 9', '> 5%', 'Firefox ESR']
 };
-
-
-gulp.task('sass', function() {
-    return gulp.src(['scss/**/*.scss', 'src/components/**/*.scss'])
+gulp.task('sass', () =>
+     gulp.src(['scss/**/*.scss', 'src/components/**/*.scss'])
         .pipe(sourcemaps.init())
         .pipe(sass())
         .on("error", sass.logError)
         .pipe(autoprefixer(autoprefixerOptions))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css'))
-});
-gulp.task('watch', function() {
+);
+gulp.task('watch', () => {
     gulp.watch(['scss/**/*.scss','src/components/**/*.scss'], ['sass']);
 });
 
-gulp.task('default', function(callback) {
+gulp.task('default', (callback) => {
     runSequence(['sass', 'watch'],
         callback
     )
