@@ -4,7 +4,6 @@ import { Match , Link, Miss} from 'react-router';
 export default class Participant extends React.Component {
   render() {
      const {participant, pathname} = this.props;
-     // console.log(pathname);
     return (
      <div className="Participant-teaser">
       <h3>{participant.name}</h3>

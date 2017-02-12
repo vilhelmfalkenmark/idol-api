@@ -1,15 +1,21 @@
-//-----------------------------------------
-// Calculate percentage - in honor of Vesslan
-//-----------------------------------------
-@mixin vesslan($span, $col, $margin: 0) {
-  $percentage: percentage($span/$col);
-  width: calc(#{$percentage} - #{$margin});
-} 
-
-////////////////////////////////
-// Margin
-///////////////////////////////
-@mixin margin-y($m: 10px) {
-  margin-top: $m;
-  margin-bottom: $m;
+@mixin card() {
+  background-color: white;
+  padding: $base;
+  border-radius: 3px;
+  box-shadow: 6px 10px 20px -13px rgba(0,0,0,0.75);
+  @include breakpoint(1px, 400px) {
+    @include flex-gtr-col(1,$base);
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include breakpoint(401px, 767px) {
+    @include flex-gtr-col(2,$base);
+  }
+  @include breakpoint(768px) {
+    @include flex-gtr-col(4,2*$base);
+  }
+  a {
+    display: block;
+    margin-top: $base;
+  }
 }

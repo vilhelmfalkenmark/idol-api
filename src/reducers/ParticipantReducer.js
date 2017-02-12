@@ -57,7 +57,5 @@ if (action.type === "VIDEOS_REJECTED") {
     specificParticiant: {}
   }
 }
-
-
 return state;
 }

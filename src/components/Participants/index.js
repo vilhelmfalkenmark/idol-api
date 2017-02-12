@@ -1,26 +1,14 @@
 import React from 'react';
 import { connect } from "react-redux";
-// import { getAllParticipants } from "../../actions/ApiActions";
 import Participant from "./Participant";
 
 class Participants extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-  // componentDidMount() {
-  //  this.props.dispatch(getAllParticipants());
-  // }
-
   render() {
     const {name, participants} = this.props.participants
-    console.log(participants);
     return (
      <section >
       <h2>{name}</h2>
+      <p className="text">hej</p>
       <div className="Participants-container">
       {
        participants ?
@@ -34,8 +22,6 @@ class Participants extends React.Component {
       </div>
      </section>
     )
-
-
   }
 }
 const mapStateToProps = (state) => {

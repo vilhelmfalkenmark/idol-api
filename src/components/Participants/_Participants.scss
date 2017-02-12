@@ -2,9 +2,12 @@
   @include flex-row();
 }
 .Participant-teaser {
-  @include flex-gtr-col(4,2*$base);
-  img {
-    width: 100%;
-    height: auto;
+  @include card();
+  h3 {
+    padding-bottom: $base;
+  }
+  a {
+    display: block;
+    margin-top: $base;
   }
 }

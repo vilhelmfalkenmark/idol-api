@@ -2,7 +2,7 @@
   @include flex-row();
 }
 .ParticipantFull-video-col {
-  @include flex-gtr-col(4,$base);
+  @include card();
   display: flex;
   flex-direction: column;
   justify-content: space-between;

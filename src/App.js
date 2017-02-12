@@ -19,14 +19,13 @@ class App extends React.Component {
     return (
         <div className="App">
           <div className="Site-container">
-            <a href="/" className="Site-logo"><h1>Vilhelm Falkenmark Arbetsprov</h1></a>
-
+            <a href="/" className="Site-logo"><h1>Vilhelm Falkenmark Idol API</h1></a>
             <Router>
              <div>
-              <menu className="A-Menu">
-               <ul className="A-Menu-list">
+              <menu>
+               <ul>
                  <li><Link to={`/`}>Hem</Link></li>
-                 <li><Link to={`/idol-deltagare`} className="is-active"><i className="flaticon-folded-newspaper"></i>Visa alla deltagare</Link></li>
+                 <li><Link to={`/idol-deltagare`}>Visa alla deltagare</Link></li>
                </ul>
               </menu>
              <Match exactly pattern="/" component={LandingPage}/>
