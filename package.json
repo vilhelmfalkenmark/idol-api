@@ -1,5 +1,5 @@
 {
-  "name": "vilhelm-falkenmark-arbetsprov",
+  "name": "vilhelm-falkenmark-idol-api",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -30,7 +30,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "proxy": "node  proxy.js"
+    "eject": "react-scripts eject"
   }
 }
